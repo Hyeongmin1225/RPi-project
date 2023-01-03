@@ -1,8 +1,8 @@
 
-#n = int(input('숫자를 입력하세요:')) 
+n = int(input('숫자를 입력하세요:')) 
 
 sum = 0
-for i in range (0,11,2):
+for i in range (0,n,2):
     sum+=i
     print (i,end = " ") 
     print(" ")     

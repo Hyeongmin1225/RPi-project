@@ -9,6 +9,8 @@ if num > 10 :
 else :
      print('10보다 작다')
      
-n = int(input('숫자를 입력하세요')) 
 
-for ()
+
+ 
+    
+    
