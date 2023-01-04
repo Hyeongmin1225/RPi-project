@@ -11,7 +11,7 @@ RED_led=12
 BLUE_led=11
 GREEN_led=13
 while 1 : 
-    color = (input('색깔을 입력해주세요:'))
+    color = (input('r,g,b 색깔을 입력해주세요:'))
     GPIO.setup(RED_led,GPIO.OUT, initial=GPIO.LOW)
     GPIO.setup(BLUE_led,GPIO.OUT, initial=GPIO.LOW)
     GPIO.setup(GREEN_led,GPIO.OUT, initial=GPIO.LOW)
