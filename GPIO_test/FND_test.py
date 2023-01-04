@@ -8,7 +8,9 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
 seg = [8,10,11,12,13,15,16,18]
+#      a,b ,c ,d ,e ,f ,g ,dp
 GPIO.setup(seg, GPIO.OUT, initial=GPIO.LOW)
+#      a,b,c,d,e,f,g,dp
 
 fnd = [(1,1,1,1,1,1,0,0),
     (0,1,1,0,0,0,0,0),
