@@ -42,9 +42,10 @@ def main():
 #      a,b ,c ,d ,e ,f ,g ,dp
     GPIO.setup(seg, GPIO.OUT, initial=GPIO.LOW)
 #      a,b,c,d,e,f,g,dp
+# 1=15',2=30' ... 12=180'
 
     while 1:
-        duty_ratio = int(input('0~10을 입력하시오'))
+        duty_ratio = int(input('0~12을 입력하시오'))
         Servo.ChangeDutyCycle(duty_ratio)
         time.sleep(1)
         GPIO.output(seg, fnd[duty_ratio])
