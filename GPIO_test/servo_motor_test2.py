@@ -9,7 +9,11 @@ fnd = [(1,1,1,1,1,1,0,0),
     (1,0,1,1,1,1,1,0),
     (1,1,1,0,0,0,0,0),
     (1,1,1,1,1,1,1,0),
-    (1,1,1,1,0,1,1,0)]
+    (1,1,1,1,0,1,1,0),
+    (1,1,1,0,1,1,1,0),
+    (0,0,1,1,1,1,1,0),
+    (1,0,0,1,1,1,0,0)
+    ]
 def main():
     duty_ratio= 0
     MaxDuty= 12
@@ -33,7 +37,7 @@ def main():
     print('Rotating at interval of 0-12 degrees')
     while duty_ratio <= MaxDuty:
         Servo.ChangeDutyCycle(duty_ratio)
-        time.sleep(2)
+        time.sleep(1)
         GPIO.output(seg, fnd[duty_ratio])
         duty_ratio+= 1
     if duty_ratio > MaxDuty:
