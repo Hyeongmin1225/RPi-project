@@ -6,7 +6,7 @@ import time
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
-seg = [8,10,11,12,13,15,16,18]
+seg = [31,32,33,35,36,37,38,40]
 #      a,b ,c ,d ,e ,f ,g ,dp
 GPIO.setup(seg, GPIO.OUT, initial=GPIO.LOW)
 #      a,b,c,d,e,f,g,dp
