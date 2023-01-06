@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time 
 import I2C_driver
 
+
 def main():
     fnd = [(1,1,1,1,1,1,0,0),
     (0,1,1,0,0,0,0,0),
@@ -50,26 +51,33 @@ def main():
             stopTime = time.time()
         Time_interval= stopTime - startTime
         Distance = Time_interval * 17000
-        Distance = round(Distance, 2)
+        Distance = round(Distance, 1)
         Distance1 = str(Distance)
         
         length = "Distance " + Distance1 +"cm"
+        
         mylcd.lcd_display_string("Door close", 1)
         mylcd.lcd_display_string(length, 2)
-         
+        
+        
         
         
         if Distance<10 :
             duty_ratio = 10
             Servo.ChangeDutyCycle(duty_ratio)
             time.sleep(1)
+            mylcd.lcd_clear()
             mylcd.lcd_display_string("Door open", 1)
-            GPIO.output(seg, fnd[3])
-            time.sleep(1)
-            GPIO.output(seg, fnd[2])
-            time.sleep(1)
-            GPIO.output(seg, fnd[1])
-            time.sleep(1)
+            # GPIO.output(seg, fnd[3])
+            # time.sleep(1)
+            # GPIO.output(seg, fnd[2])
+            # time.sleep(1)
+            # GPIO.output(seg, fnd[1])
+            # time.sleep(1)
+            # GPIO.output(seg, fnd[0])
+            for i in reversed(range(4)):
+                GPIO.output(seg, fnd[i])
+                time.sleep(1)
             duty_ratio= 3
             Servo.ChangeDutyCycle(duty_ratio)
             

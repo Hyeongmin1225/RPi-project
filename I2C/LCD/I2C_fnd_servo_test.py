@@ -24,6 +24,7 @@ def main():
     GPIO.setmode(GPIO.BOARD) 
     GPIO.setwarnings(False)
     GPIO.setup(PWMpin, GPIO.OUT) 
+    mylcd.lcd_clear()
     Servo=GPIO.PWM(PWMpin, 50) 
     Servo.start(0)
     time.sleep(1)
